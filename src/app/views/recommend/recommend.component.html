@@ -1,0 +1,13 @@
+<div class="newlist">
+    <div class="newsitems" *ngFor="let item of newslist">
+        <h3>{{item.original_status.title}}</h3>
+        <p> {{item.original_status.description}}</p>
+        <div>
+            <!-- <span class="headerImg">
+                <img src="{{item.original_status.user.profile_image_url}}" alt="">
+            </span> -->
+            <span class="username">{{item.original_status.user.screen_name}}</span>
+            <span class="createtime">{{item.original_status.created_at|totime|date:"MM-dd  hh:mm:ss"}}</span>
+        </div>
+    </div>
+</div>

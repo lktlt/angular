@@ -1,0 +1,76 @@
+.main {
+    margin: 0 auto;
+    width: 960px;
+}
+.zhishu  {
+    display: flex;
+    width: 620px;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 0;
+}
+.zhishu li{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+}
+.zhishu li:nth-child(3n) {
+    border-right-width: 0;
+    padding-right:0;
+}
+.zhishu li .indexNum {
+    font-size: 24px;
+    margin: 10px 0; 
+    color: red;
+    font-weight: 700;
+}
+.zhishu li div:nth-child(1) {
+    padding: 0 10px;
+}
+.zhishu li h3{
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.circleList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 620px;
+}
+.circleList span {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 6px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+.circleList .current{
+    background-color: #07d;
+}
+.zhishu li .negative  {
+    color: green;
+}
+.zhishu li .positive {
+    color: red;
+}
+.newtab  {
+    display: flex;
+    align-content: center;
+}
+.newtab .tab {
+    padding: 10px 20px;
+}
+
+.newtab .active {
+    color: #07d;
+    font-weight: 700;
+    border-bottom: 3px solid #07d;
+}
+

@@ -1,0 +1,50 @@
+.dayInfo {
+    width: 620px;
+    .times {
+        padding: 10px 0;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 10px;
+        .day {
+            font-size: 28px;
+            color: orange;
+        }
+    }
+    .infolist {
+        display: flex;
+        align-items: top;
+        margin-bottom: 10px;
+        .infoleft {
+            padding-right: 25px;
+        }
+        .inforight {
+            position: relative;
+            margin: 0 0 20px 0;
+        }
+        .inforight::before {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 5px ;
+            background-color: #cccccc75;
+            top: 0px;
+            left: -15px;
+        }
+        .inforight::after {
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: calc(100% - 10px);// 减号左右需要空格
+            border-radius: 5px ;
+            margin: 15px 0 0 0;
+            background-color: #cccccc75;
+            top: 0px;
+            left: -13px;
+        }
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+}

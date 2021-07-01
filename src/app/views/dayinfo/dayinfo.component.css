@@ -1,0 +1,49 @@
+.dayInfo {
+  width: 620px;
+}
+.dayInfo .times {
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+.dayInfo .times .day {
+  font-size: 28px;
+  color: orange;
+}
+.dayInfo .infolist {
+  display: flex;
+  align-items: top;
+  margin-bottom: 10px;
+}
+.dayInfo .infolist .infoleft {
+  padding-right: 25px;
+}
+.dayInfo .infolist .inforight {
+  position: relative;
+  margin: 0 0 20px 0;
+}
+.dayInfo .infolist .inforight::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 5px ;
+  background-color: #cccccc75;
+  top: 0px;
+  left: -15px;
+}
+.dayInfo .infolist .inforight::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: calc(100% - 10px);
+  border-radius: 5px ;
+  margin: 15px 0 0 0;
+  background-color: #cccccc75;
+  top: 0px;
+  left: -13px;
+}
+.dayInfo .infolist p {
+  padding: 0;
+  margin: 0;
+}

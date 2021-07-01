@@ -1,0 +1,90 @@
+.cstock {
+  width: 960px;
+  margin: 0 auto;
+}
+.cstock .left {
+  margin-top: 40px;
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+}
+.cstock .left .chooserange {
+  display: flex;
+}
+.cstock .left .chooserange .rangeitem {
+  margin-right: 20px;
+}
+.cstock .left .choosemarket {
+  border-bottom: 1px solid #ccc;
+}
+.cstock .left .choosemarket span {
+  margin-right: 5px;
+  padding: 5px 10px 0;
+  background-color: #ededed;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.cstock .left > h3 {
+  margin: 10px 0;
+}
+.cstock .left .chooserange {
+  display: flex;
+  height: 60px;
+  padding-left: 30px;
+  background-color: #ededed;
+  align-items: center;
+}
+.tooltabs {
+  display: flex;
+  justify-content: top;
+}
+.tooltabs .tabHeader {
+  border-right: 1px solid #ccc;
+}
+.tooltabs .tabHeader .currentTab {
+  border: 1px solid #ccc;
+  border-right: 1px solid #fff;
+  transform: translate(1px, 0);
+}
+.tooltabs .tabHeader h4 {
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+}
+.tooltabs .tabContent {
+  padding-left: 30px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tooltabs .tabContent .checkItem {
+  width: 33.3%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tooltabs .tabContent .sx {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tooltabs h4 {
+  margin: 0;
+  padding: 0;
+}
+.selectList td {
+  text-align: center;
+}
+.selectList input {
+  width: 100px;
+}
+button {
+  margin-top: 20px;
+}
+.stocklist table {
+  width: 100%;
+}
+.stocklist td {
+  text-align: center;
+}

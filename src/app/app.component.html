@@ -1,2 +1,20 @@
+<!-- <link rel="stylesheet" href="../assets/font/iconfont.css"> -->
+<nav class="header">
+  <div class="nav">
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="">
+    </div>
+    <div class="navlist">
+        <div [routerLink]="[ '/index/recommend' ]"  routerLinkActive="router-link-active">首页</div>
+        <div [routerLink]="[ '/choosestock' ]"  routerLinkActive="router-link-active">股票筛选</div>
+        <div [routerLink]="[ '/newstock' ]"  routerLinkActive="router-link-active">新股上市</div>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="搜索">
+      <span></span>
+    </div>
+  </div>
 
+
+</nav>
 <router-outlet></router-outlet>

@@ -1,0 +1,115 @@
+<div class="cstock">
+    <div class="left">
+        <div class="choosemarket">
+            <span>沪深</span>
+            <span>港股</span>
+            <span>美股</span>
+        </div>
+        <h3>选择范围</h3>
+        <div class="chooserange">
+            <div class="rangeitem">
+                <span>市场：</span>
+                <select name="rangemarket" [(ngModel)]="exchange" id="">
+                    <option value="sh_sz">全部A股</option>
+                    <option value="sha">沪市A股</option>
+                    <option value="sza">深市A股</option>
+                </select>
+            </div>
+            <div class="rangeitem">
+                <span>行业：</span>
+                <select name="rangemarket" [(ngModel)]="areacode" id="">
+                    <option value="">全部</option>
+                    <option value="{{item.encode}}" *ngFor="let item of industryList">{{item.name}}</option>
+                </select>
+            </div>
+            <div class="rangeitem">
+                <span>地域板块：</span>
+                <select name="rangemarket" [(ngModel)]="indcode" id="">
+                    <option value="">全部</option>
+                    <!-- // Object.keys(areasList)循环对象的key值 -->
+                    <option value="{{item}}" *ngFor="let item of areaskeys">{{areasList[item]}}</option>
+                </select>
+            </div>
+        </div>
+        <h3>条件设置</h3>
+        <div class="tools">
+            <div class="tooltabs">
+                <div class="tabHeader">
+                    <h4 [ngClass]="{'currentTab': currenttabIndex==0}" (click)="toolTabEvent(0)">基本指标</h4>
+                    <h4 [ngClass]="{'currentTab': currenttabIndex==1}" (click)="toolTabEvent(1)">雪球指标</h4>
+                    <h4 [ngClass]="{'currentTab': currenttabIndex==2}" (click)="toolTabEvent(2)">行情指标</h4>
+                    <h4 [ngClass]="{'currentTab': currenttabIndex==3}" (click)="toolTabEvent(3)">财务报表</h4>
+                </div>
+                <div class="tabContent">
+                    <ng-container *ngIf="currenttabIndex!==3; else elseTemplate">
+                        <div class="checkItem" *ngFor="let item of toolList[currenttabIndex]">
+                            <input (change)="checkEvent(item,$event)" [(ngModel)]="item.checked" type="checkbox"
+                                name="{{item.field}}" id="{{item.field}}">
+                            <span>{{item.name}}</span>
+                        </div>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div *ngFor="let item of finacialKeys; let i=index">
+                            <h4 style="background-color: #ccc;">{{item}}</h4>
+                            <div class="sx">
+                                <div class="checkItem" *ngFor="let item of toolList[currenttabIndex][i][item]">
+                                    <input (change)="checkEvent(item,$event)" [(ngModel)]="item.checked" type="checkbox"
+                                        name="{{item.field}}" id="{{item.field}}">
+                                    <span>{{item.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <h3>筛选条件</h3>
+        <table class="selectList">
+            <thead class="header">
+                <tr>
+                    <th>条件</th>
+                    <th>最小值</th>
+                    <th>条件范围</th>
+                    <th>最大值</th>
+                    <th>删除</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 使用ngModel记得导入formsmodule模块 -->
+                <tr class="sItem" *ngFor="let item of selectedList; let i=index">
+                    <td>{{item.field_name}}</td>
+                    <td><input type="text" [(ngModel)]="item.cmin"></td>
+                    <td>
+                        <input type="range" [(ngModel)]="item.cmin" min="{{item.min}}" max="{{item.max}}" step="10">
+                        <input type="range" [(ngModel)]="item.cmax" min="{{item.min}}" max="{{item.max}}" step="10">
+                    </td>
+                    <td><input type="text" [(ngModel)]="item.cmax"></td>
+                    <td (click)="deleteItem(i,item)">x</td>
+                </tr>
+                <tr><button class="startSelect" (click)="startSelect()">开始选股</button></tr>
+            </tbody>
+        </table>
+        <h3>筛选的股票列表</h3>
+        <div class="stocklist">
+            <table>
+                <thead>
+                    <tr>
+                        <th>股票</th>
+                        <th>当前价</th>
+                        <th>当日涨跌幅</th>
+                        <th>pettm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of stockList">
+                        <td>{{item.name}}</td>
+                        <td>{{item.current}}</td>
+                        <td>{{item.pct}}</td>
+                        <td>{{item.pettm}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right"></div>
+</div>

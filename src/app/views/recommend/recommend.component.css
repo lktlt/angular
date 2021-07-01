@@ -1,0 +1,9 @@
+
+.newsitems {
+    width: 640px;
+    overflow: hidden;
+}
+.newsitems div span {
+    margin-right: 20px;
+
+}
